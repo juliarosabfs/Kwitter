@@ -1,5 +1,15 @@
 
-//ADD YOUR FIREBASE LINKS
+ const firebaseConfig = {
+  apiKey: "AIzaSyCg-MM0viOUEQjsMkjpAZofd3V3W2wcR7Y",
+  authDomain: "teste-da-aula-b6aa2.firebaseapp.com",
+  projectId: "teste-da-aula-b6aa2",
+  storageBucket: "teste-da-aula-b6aa2.appspot.com",
+  messagingSenderId: "317189971673",
+  appId: "1:317189971673:web:b807e26bd6670ac66068c8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
   user_name = localStorage.getItem("user_name");
 
