@@ -1,51 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Página de Salas Kwitter</title>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
-
-
-<div class="container">
-	<button id="logout" onclick="logout();" class="glyphicon glyphicon-log-out btn btn-danger">Sair</button>
-
-	<center>
-		<h1  class="header">	
-			Kwitter	
-			<sup>
-				<img src="m2.png">
-			</sup>
-		</h1>
-		<h3 id="user_name" class="color_white"></h3>
-
-		<div class="form-group input_div_room_page">
-			<label>#Adicionar Sala:</label>
-			<input type="text" id="room_name" class="form-control" placeholder="#Room Name">
-		</div>
-		
-		<button onclick="addRoom();" class="btn btn-success">#Adicionar Sala</button>
-
-		<h3 class="color_white">#SALAS EM DESTAQUE</h3>
-
-		<div id="output"></div>
-		
-	</center>
-</div>
-
-
-<script src="kwitter_room.js"></script>
-</body>
-</html>
+  //Adicione os links de configurações de seu App Firebase
+  
+    // Inicializar Firebase
+   firebase.initializeApp(firebaseConfig);
+  
+  user_name = localStorage.getItem("user_name");
+  
+  document.getElementById("user_name").innerHTML = "Bem-vindo(a) " + user_name + "!";
+  
+  function addRoom()
+  {
+    room_name = document.getElementById("room_name").value;
+  
+    firebase.database().ref("/").child(room_name).update({
+      purpose : "adding room name"
+    });
+  
+      localStorage.setItem("room_name", room_name);
+      
+      window.location = "kwitter_page.html";
+  }
+  
+  function getData() {  firebase.database().ref("/").on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
+         Room_names = childKey;
+         console.log("Nome da Sala - " + Room_names);
+        row = "<div class='room_name' id="+Room_names+" onclick='redirectToRoomName(this.id)' >#"+ Room_names +"</div><hr>";
+        document.getElementById("output").innerHTML += row;
+      });
+    });
+  
+  }
+  
+  getData();
+  
+  function redirectToRoomName(name)
+  {
+    console.log(name);
+    localStorage.setItem("room_name", name);
+      window.location = "kwitter_page.html";
+  }
+  
+  function logout() {
+  localStorage.removeItem("user_name");
+  localStorage.removeItem("room_name");
+      window.location = "index.html";
+  }
+  
