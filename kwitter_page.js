@@ -9,6 +9,7 @@ const firebaseConfig = {
   appId: "1:1039089738015:web:d6a1597aa9badf8b67102a"
 };
 
+  firebase.initializeApp(firebaseConfig);
 	user_name = localStorage.getItem("user_name");
 	room_name = localStorage.getItem("room_name");
 
@@ -61,5 +62,5 @@ function updateLike(message_id)
 function logout() {
 localStorage.removeItem("user_name");
 localStorage.removeItem("room_name");
-window.location.replace("kwitter.html");
+window.location.replace("index.html");
 }
