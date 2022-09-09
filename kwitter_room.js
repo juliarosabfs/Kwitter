@@ -1,5 +1,5 @@
   //Configurações do Firebase de seu App
-const firebaseConfig = {
+const firebase = {
   apiKey: "AIzaSyC5C03pVuu6M0dvuACL8qf8EDT_aYLY-3s",
   authDomain: "teste-aula-c100.firebaseapp.com",
   databaseURL: "https://teste-aula-c100-default-rtdb.firebaseio.com",
