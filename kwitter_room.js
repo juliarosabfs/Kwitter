@@ -1,5 +1,5 @@
   //Configurações do Firebase de seu App
-const firebase = {
+var firebase.Config = {
   apiKey: "AIzaSyC5C03pVuu6M0dvuACL8qf8EDT_aYLY-3s",
   authDomain: "teste-aula-c100.firebaseapp.com",
   databaseURL: "https://teste-aula-c100-default-rtdb.firebaseio.com",
@@ -10,8 +10,9 @@ const firebase = {
 };
 
   // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
 
-  user_name = localStorage.getItem("user_name");
+user_name = localStorage.getItem("user_name");
 
 document.getElementById("user_name").innerHTML = "Welcome " + user_name + "!";
 
@@ -50,5 +51,5 @@ function redirectToRoomName(name)
 function logout() {
 localStorage.removeItem("user_name");
 localStorage.removeItem("room_name");
-    window.location = "kwitter.html";
+    window.location = "index.html";
 }
