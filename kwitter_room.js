@@ -1,13 +1,13 @@
   //Configurações do Firebase de seu App
-const firebaseConfig = {
-  apiKey: "AIzaSyC5C03pVuu6M0dvuACL8qf8EDT_aYLY-3s",
-  authDomain: "teste-aula-c100.firebaseapp.com",
-  databaseURL: "https://teste-aula-c100-default-rtdb.firebaseio.com",
-  projectId: "teste-aula-c100",
-  storageBucket: "teste-aula-c100.appspot.com",
-  messagingSenderId: "1039089738015",
-  appId: "1:1039089738015:web:d6a1597aa9badf8b67102a"
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyC5C03pVuu6M0dvuACL8qf8EDT_aYLY-3s",
+    authDomain: "teste-aula-c100.firebaseapp.com",
+    databaseURL: "https://teste-aula-c100-default-rtdb.firebaseio.com",
+    projectId: "teste-aula-c100",
+    storageBucket: "teste-aula-c100.appspot.com",
+    messagingSenderId: "1039089738015",
+    appId: "1:1039089738015:web:d6a1597aa9badf8b67102a"
+  };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
