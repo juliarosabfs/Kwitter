@@ -47,7 +47,7 @@ getData();
 
 function updateLike(message_id)
 {
-  console.log("clicou no botão - " + message_id);
+  console.log("clicou no botão Curtidas - " + message_id);
 	button_id = message_id;
 	likes = document.getElementById(button_id).value;
 	updated_likes = Number(likes) + 1;
