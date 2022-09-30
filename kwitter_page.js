@@ -38,7 +38,7 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
          message_with_tag = "<h4 class='message_h4'>" + message + "</h4>";
 like_button ="<button class='btn btn-warning' id="+firebase_message_id+" value="+like+" onclick='updateLike(this.id)'>Curtidas: "+ like +"</button>";
 
-        row = name_with_tag + message_with_tag +like_button + span_with_tag;       
+        row = name_with_tag + message_with_tag +like_button;       
         document.getElementById("output").innerHTML += row;
 //Finalizar código
       } });  }); }
