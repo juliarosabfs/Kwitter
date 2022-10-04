@@ -21,7 +21,7 @@
     room_name = document.getElementById("room_name").value;
   
     firebase.database().ref("/").child(room_name).update({
-      purpose : "adding room name"
+      purpose : "adicionando nome da sala"
     });
   
       localStorage.setItem("room_name", room_name);
